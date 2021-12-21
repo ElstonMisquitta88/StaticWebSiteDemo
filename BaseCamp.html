@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Elston</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+    <link rel="icon" href="images/elstm.ico" type="image/ico" sizes="16x16">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/fancybox.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+  
+
+  <div class="site-wrap">
+
+  <div class="site-mobile-menu">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close mt-3">
+        <span class="icon-close2 js-menu-toggle"></span>
+      </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div>
+
+  <header class="header-bar d-flex d-lg-block align-items-center">
+    <div class="site-logo">
+      <a href="index.html">Elston</a>
+    </div>
+    
+    <div class="d-inline-block d-xl-none ml-md-0 ml-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+
+    <div class="main-menu">
+      <ul class="js-clone-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="bio.html">Bio</a></li>
+      </ul>
+      <ul class="social js-clone-nav">
+        <li><a href="https://www.facebook.com/profile.php?id=100010583087997" target="_blank"><span class="icon-facebook"></span></a></li>
+        <li><a href="https://www.instagram.com/elstonmisquitta/" target="_blank"><span class="icon-instagram"></span></a></li>
+      </ul>
+    </div>
+  </header> 
+  <main class="main-content">
+    <div class="container-fluid photos">
+
+      <div class="row pt-4 mb-12 text-center">
+        <div class="col-12">
+           <h2 class="text-white mb-4" id="PageTitle"></h2>
+        </div>
+      </div>
+
+      <div class="row pt-1 px-4 mb-12 text-left">
+        <div class="col-12">
+           <p class="text-white">There are summit views and there are ‘big’ summit views. On the Gaumukh Tapovan trek, you don’t just see the best views of Mt Shivling. You see Mt Shivling right from the base to it’s summit. And if you don’t know about Mt Shivling, it’s one of the most beautiful looking  mountains in our country. No wonder the mountain has been featured in our gold calendar every year since it was published.</p>
+           <p class="text-white">There are summit views and there are ‘big’ summit views. On the Gaumukh Tapovan trek, you don’t just see the best views of Mt Shivling. You see Mt Shivling right from the base to it’s summit.</p>
+        </div>
+     </div>
+
+
+	   <!-- [+] Block Starts -->
+      <div id="_dataval" class="row align-items-stretch">
+     </div>
+      <!-- [-] Block Starts -->
+
+       
+      <div class="row pt-1 px-4 mb-12 text-left">
+        <div class="col-12">
+           <p class="text-white">Short itinerary</p>
+           <p class="text-white">Day 2: Trek from Gangotri (10,055 ft) to Chirbasa (11,761 ft); 6 hours, 9 km</p>
+           <p class="text-white">Day 3: Chirbasa (11,761 ft) to Bhojbasa (12,450 ft); 3 hours, 5 km.</p>
+        </div>
+     </div>
+      
+
+
+      <div class="row justify-content-center">
+        <div class="col-md-12 text-center py-5">
+          <p class="copyright"> 
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+      </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</div> <!-- .site-wrap -->
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/main.js"></script>
+
+
+
+ 
+  
+  <script>
+		var _filterdata="";
+	$(document).ready(function(){
+		
+	
+		$.get('Core/TrekList.txt', function(data) {
+		
+			var _pagename = getUrlParameter('Site');
+			_filterdata = $.parseJSON(data).filter(({Site}) => Site === _pagename);
+      
+      var _heading=_filterdata[0].Heading+" - "+ _filterdata[0].PhototCount + " Photos";
+			$("#PageTitle").text(_heading)
+			
+			for (i = 0, len = _filterdata[0].SubList.length; i < len; i++) {
+				
+        if(_filterdata[0].SubList[i].ImgOrder=="B")
+					{
+						var str1_B ="<div class='col-6 col-md-6 col-lg-6' data-aos='fade-up'>"
+						var str2_B ="<a href='"+_filterdata[0].SubList[i].ImgSrc+"' data-caption='"+_filterdata[0].SubList[i].ImageCaption+"' class='d-block photo-item' data-fancybox='gallery'>"
+						var str3_B ="<img src='"+_filterdata[0].SubList[i].ImgSrc+"' alt='Image' class='img-fluid'></img>"
+						var str4_B ="<div class='photo-text-more'><span class='icon icon-search'> &nbsp;"+_filterdata[0].SubList[i].ImageCaption+"</span>"
+						var str5_B ="</div></a></div>"
+			  
+						var res = str1_B.concat(str2_B,str3_B,str4_B,str5_B);
+						$("#_dataval").append(res);
+					}	
+
+			 		if(_filterdata[0].SubList[i].ImgOrder=="A")
+					{
+						var str1 = "<div class='col-6 col-md-6 col-lg-4' data-aos='fade-up'>";
+						var str2 ="<a href='"+_filterdata[0].SubList[i].ImgSrc+"' data-caption='"+_filterdata[0].SubList[i].ImageCaption+"' class='d-block photo-item' data-fancybox='gallery'>";
+						var str3 ="<img src='"+_filterdata[0].SubList[i].ImgSrc+"' alt='Image' class='img-fluid'>";
+						var str4 ="<div class='photo-text-more'><span class='icon icon-search'> &nbsp;"+_filterdata[0].SubList[i].ImageCaption+"</span>";
+						var str5 ="</div></a></div>";
+					
+						var res = str1.concat(str2,str3,str4,str5);
+						$("#_dataval").append(res);
+					} 
+					
+					
+					
+				
+			}
+			
+			
+			
+			
+		}); 
+	});
+	
+	
+	
+	
+	
+	
+	
+	var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+		for (i = 0; i < sURLVariables.length; i++) {
+			sParameterName = sURLVariables[i].split('=');
+
+			if (sParameterName[0] === sParam) {
+				return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+			}
+		}
+	};
+	
+	
+	</script>
+  </body>
+</html>
